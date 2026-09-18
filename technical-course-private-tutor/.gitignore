@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# logs / temp
+*.log
+tmp/
+.cache/
+
+# python (用于校验脚本时)
+__pycache__/
+*.pyc
+.venv/
+venv/
