@@ -1,0 +1,26 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# logs / temp
+*.log
+tmp/
+.cache/
+
+# python (用于校验脚本时)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 本 skill 的输入通常是对话记录，不要误提交用户的私人对话
+*.chat.txt
+*.conversation.txt
+chat-export*.md
