@@ -77,7 +77,7 @@ v3：Conversation Synthesis Skill v3 (22980128)   · 19 个部分 / 59 条规则
 
 ### 本仓库刻意没做的事
 
-- **没给 v3 补聊天模式提示词**。`technical-course-private-tutor` 有 `prompts/chat-mode.md`，但那是针对该 skill 手写的。本 skill 若要给纯聊天模型用，应另写一份并建立同步机制，而不是复用——那是独立工作。
+- **1.0.0 时没做聊天模式提示词**（当时只有 `prompts/chat-mode.md` 一份，且是针对讲师 skill 手写的）。后续已补 `prompts/conversation-synthesis.md`，见该版条目。
 - **没把 v3 第一部分的自更新规则整段并入 `SKILL.md`**，只留七条核心 + 指针。理由：58 行的方法论放进主文件会让主干失焦，而它本来就是"按需查阅"的内容。
 
 ---
