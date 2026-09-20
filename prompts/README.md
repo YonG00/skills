@@ -2,10 +2,21 @@
 
 给**没有文件系统**（可能也没有联网）的纯聊天模型用的提示词。
 
-| 文件 | 对应 skill | 用法 |
-|---|---|---|
-| [`technical-course-private-tutor.md`](technical-course-private-tutor.md) | `technical-course-private-tutor` | **开课时**贴出，然后按「继续 / 下一节」逐节推进 |
-| [`conversation-synthesis.md`](conversation-synthesis.md) | `conversation-synthesis` | **一段对话聊完之后**，在末尾贴出，让它把这段对话整理成文章 |
+| 文件 | 对应 skill | 用法 | 阶段 |
+|---|---|---|---|
+| [`technical-course-private-tutor.md`](technical-course-private-tutor.md) | `technical-course-private-tutor` | **开课时**贴出，然后按「继续 / 下一节」逐节推进 | 一次一节 |
+| [`conversation-synthesis.md`](conversation-synthesis.md) | `conversation-synthesis` | **一段对话聊完之后**，在末尾贴出，让它把这段对话整理成文章 | 7 阶段 |
+| [`zhihu-question-mining.md`](zhihu-question-mining.md) | `zhihu-question-mining` | 贴出**口述稿**之后贴出，让它拆成可发布的知乎提问 | 4 阶段 |
+
+## 三份提示词的阶段划分
+
+| 提示词 | 阶段 |
+|---|---|
+| 讲师 | 一次一节（走完路线图为止） |
+| 对话合成 | 1 骨架 → 2 初稿 → 3 论证加固 → 4 语言与风格 → 5 证据与链接 → 6 结尾 → 7 标题与成稿 |
+| 知乎提问 | 1 话题划分 → 2 标题 → 3 描述 → 4 交付与自检 |
+
+**闸门都设在最容易做错的那一步**：讲师是「一节讲完就停」，对话合成是「骨架确认后才写正文」，知乎提问是「话题划分确认后才动标题」。
 
 ## 为什么需要单独一份
 

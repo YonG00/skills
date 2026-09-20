@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# logs / temp
+*.log
+tmp/
+.cache/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 本 skill 的输入通常是用户的私人口述稿，不要误提交
+*.口述稿.txt
+*.transcript.txt
+*.录音转写.txt
+chat-export*.md
