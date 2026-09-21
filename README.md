@@ -12,9 +12,10 @@ Agent Skills 集合。
 
 | 文件 | 说明 |
 |---|---|
+| [`scripts/check.py`](scripts/check.py) | **仓库自检**。`python3 scripts/check.py` 一次跑三类检查：① CJK 加粗渲染缺陷；② 内部链接；③ **提示词与 skill 的同步**（关键词 + 目录完整性）。改完任何东西推之前跑一下。 |
 | [`prompts/technical-course-private-tutor.md`](prompts/technical-course-private-tutor.md) | **聊天模式提示词**（对应 `technical-course-private-tutor`）。给没有文件系统（可能也没有联网）的纯聊天模型用。含方案 A（URL 版）/ 方案 B（自包含版）/ 三消息协议 / 与 `SKILL.md` 的同步清单。**用法**：开课时贴出，然后按「继续」逐节推进。 |
-| [`prompts/conversation-synthesis.md`](prompts/conversation-synthesis.md) | **聊天模式提示词**（对应 `conversation-synthesis`）。**用法**：在一段**已经聊完的对话末尾**贴出，让模型把这段对话整理成文章。含 **7 阶段流水线**（骨架 → 初稿 → 论证加固 → 语言风格 → 证据链接 → 结尾 → 标题与成稿）、两阶段停止契约、与 `SKILL.md` 的同步清单。 |
-| [`prompts/zhihu-question-mining.md`](prompts/zhihu-question-mining.md) | **聊天模式提示词**（对应 `zhihu-question-mining`）。**用法**：贴出口述稿后贴出。含 **4 阶段流水线**（话题划分 → 标题 → 描述 → 交付自检）、停止契约、标题反例、与 `SKILL.md` 的同步清单。 |
+| [`prompts/conversation-synthesis.md`](prompts/conversation-synthesis.md) | **聊天模式提示词**（对应 `conversation-synthesis`）。**用法**：在一段**已经聊完的对话末尾**贴出，让模型把这段对话整理成文章。含 **6 阶段流水线**（脉络 → 标题子标题 → 初稿 → 润色 → 加链接 → 成稿）、停止契约、与 `SKILL.md` 的同步清单。 |
+| [`prompts/zhihu-question-mining.md`](prompts/zhihu-question-mining.md) | **聊天模式提示词**（对应 `zhihu-question-mining`）。**用法**：贴出口述稿后贴出。含 **4 阶段流水线**（转写核对+话题划分 → 标题 → 描述 → 交付自检）、停止契约、标题反例、与 `SKILL.md` 的同步清单。 |
 
 每个 skill 目录自带 `SKILL.md`（执行形态）与 `README.md`（可阅读形态），可单独复制安装。
 
