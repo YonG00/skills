@@ -62,6 +62,7 @@ Skill 的外部知识地图。**Skill 保存"如何思考"，Registry 保存"去
 | 文件 | 作用 |
 |---|---|
 | `../SKILL.md` | 可执行规范（主文件） |
+| `transcript-fidelity.md` | ★ 本地原创：转写稿的识别错误核对（先搜 → 问用户） |
 | `topic-splitting.md` | ★ 本地原创：稿子 → 话题单元 → 核心矛盾 |
 | `title-craft.md` | 标题判据 + 三版真实对照 |
 | `description-style.md` | 描述风格 + 完整 before/after |
