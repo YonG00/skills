@@ -128,6 +128,8 @@ SYNC_RULES = {
     "prompts/zhihu-question-mining.md": [
         "转写核对", "存疑则合", "占位标签", "没说过",
         "一个核心矛盾", "我看到", "具体对象", "再拆",
+        # 1.2.0 新增：产出范围从"只有提问"扩为"提问 + 想法点子"
+        "想法", "点子", "建议去向", "陈述句", "三类",
     ],
 }
 
@@ -144,6 +146,7 @@ REQUIRED = {
     "zhihu-question-mining": [
         "SKILL.md", "README.md", "CHANGELOG.md",
         "references/topic-splitting.md", "references/transcript-fidelity.md",
+        "references/ideas.md",
     ],
 }
 
