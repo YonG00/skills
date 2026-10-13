@@ -131,6 +131,22 @@ SYNC_RULES = {
         # 1.2.0 新增：产出范围从"只有提问"扩为"提问 + 想法点子"
         "想法", "点子", "建议去向", "陈述句", "三类",
     ],
+    "prompts/lingbot-code-changes.md": [
+        "不扩权", "只读取证", "不写行号", "连带改动",
+        "改前", "改后", "实测数字", "对账表",
+        # 1.2.0：排版规范 + 四问
+        "代码一律放表格外", "改动本意", "不变量", "快速回滚", "验证入口",
+        # 1.3.0：组合类改动的验证矩阵
+        "验证矩阵", "四象限", "未验证", "覆盖了哪几条",
+    ],
+    "prompts/lingbot-auto-learning-logic.md": [
+        "gmean_mse", "倍率", "过线",
+        "attempt_count", "跨 run 继承", "max_reopens", "复习",
+        "21.7", "eval_interval_steps", "hardness",
+        # 存档四象限 + 三套步号
+        "final_only", "内存直出", "不碰 DCP", "静默跳过",
+        "三套", "tb_step", "绝对步号",
+    ],
 }
 
 # 每个 skill 目录至少要有这些文件
@@ -147,6 +163,12 @@ REQUIRED = {
         "SKILL.md", "README.md", "CHANGELOG.md",
         "references/topic-splitting.md", "references/transcript-fidelity.md",
         "references/ideas.md",
+    ],
+    "lingbot-auto-learning-logic": [
+        "SKILL.md", "README.md", "CHANGELOG.md",
+    ],
+    "lingbot-code-changes": [
+        "SKILL.md", "README.md", "CHANGELOG.md",
     ],
 }
 
