@@ -125,11 +125,10 @@ SYNC_RULES = {
         "判断变化", "守恒", "以什么形式进", "表格保留",
         "作者提示语", "第一人称", "没必要结尾升级", "不强制", "缺来源",
     ],
-    "prompts/zhihu-question-mining.md": [
-        "转写核对", "存疑则合", "占位标签", "没说过",
-        "一个核心矛盾", "我看到", "具体对象", "再拆",
-        # 1.2.0 新增：产出范围从"只有提问"扩为"提问 + 想法点子"
-        "想法", "点子", "建议去向", "陈述句", "三类",
+    "prompts/self-reflection-journal.md": [
+        "转写核对", "存疑则合", "占位标签", "没说过", "第一人称",
+        "问题", "想法", "记录", "发散", "未完成", "不属于发布正文",
+        "不强制总结", "待确认", "整理者补充",
     ],
     "prompts/lingbot-code-changes.md": [
         "不扩权", "只读取证", "不写行号", "连带改动",
@@ -159,7 +158,7 @@ REQUIRED = {
         "SKILL.md", "README.md", "CHANGELOG.md",
         "references/conversation-to-outline.md",
     ],
-    "zhihu-question-mining": [
+    "self-reflection-journal": [
         "SKILL.md", "README.md", "CHANGELOG.md",
         "references/topic-splitting.md", "references/transcript-fidelity.md",
         "references/ideas.md",

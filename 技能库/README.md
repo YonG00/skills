@@ -8,7 +8,7 @@
 | [dashi-animationstyle](dashi-animationstyle/) | 多风格讲解动画 |
 | [technical-course-private-tutor](technical-course-private-tutor/) | 技术课程私人导师 |
 | [conversation-synthesis](conversation-synthesis/) | 对话合成 |
-| [zhihu-question-mining](zhihu-question-mining/) | 提问挖掘 |
+| [self-reflection-journal](self-reflection-journal/) | 自我思考日志：问题、想法、记录与发散 |
 | [lingbot-auto-learning-logic](lingbot-auto-learning-logic/) | 自动学习逻辑地图 |
 | [lingbot-code-changes](lingbot-code-changes/) | 受控代码改动流程 |
 
