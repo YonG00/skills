@@ -175,4 +175,4 @@ conversation-synthesis/
 - **问题链还原的质量仍依赖模型对整段对话的阅读能力。** 方法给了阶段、字段与守恒核对，但没有自动化校验：守恒核对与九项自检目前是**模型自检**，不是可执行测试。
 - **「判断变化点」的识别没有客观阈值。** 目前只规定了"0 个不应成文"这条下限，多少个变化点才够撑起一篇文章仍靠判断。
 - **超长对话（跨数十轮、上百条资产）的守恒核对**在实践上会很冗长；尚未定义分层抽样或摘要式核对的规则。
-- **聊天模式提示词在仓库层，不在本目录。** 见 [`prompts/conversation-synthesis.md`](../prompts/conversation-synthesis.md)。本 skill 目录自身仍只有 `SKILL.md` 形态（需要文件系统）。
+- **聊天模式提示词在仓库层，不在本目录。** 见 [`prompts/conversation-synthesis.md`](../../prompts/conversation-synthesis.md)。本 skill 目录自身仍只有 `SKILL.md` 形态（需要文件系统）。

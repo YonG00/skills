@@ -33,7 +33,7 @@ def iter_md():
     """所有受检的 markdown 文件（跳过 .git 等）。"""
     return sorted(
         p for p in ROOT.rglob("*.md")
-        if ".git" not in p.parts and "node_modules" not in p.parts
+        if not any(part in p.relative_to(ROOT).parts for part in (".git", "node_modules", ".venv", "venv", "资料", "仓库"))
     )
 
 
@@ -170,6 +170,8 @@ REQUIRED = {
     "lingbot-code-changes": [
         "SKILL.md", "README.md", "CHANGELOG.md",
     ],
+    "motion-video-workflow": ["SKILL.md", "README.md", "LICENSE", "motion-kit/README.md"],
+    "dashi-animationstyle": ["SKILL.md", "README.md", "LICENSE"],
 }
 
 
@@ -195,7 +197,7 @@ def check_sync(verbose: bool = True) -> list[str]:
         print("[sync] skill 目录完整性")
     for skill, files in REQUIRED.items():
         for f in files:
-            if not (ROOT / skill / f).exists():
+            if not (ROOT / "技能库" / skill / f).exists():
                 bad.append(f"{skill}/{f} 缺失")
                 if verbose:
                     print(f"  ✗ {skill}/{f} 缺失")

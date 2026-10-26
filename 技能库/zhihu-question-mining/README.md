@@ -125,7 +125,7 @@ zhihu-question-mining/
 
 它应该先给出话题单元划分（含每个单元的核心矛盾），再逐个产出标题 + 描述，最后单独列一段极简说明（合并了哪些、拆了哪些）——**那段说明不是发布内容**。
 
-**聊天模式提示词**见仓库根的 [`prompts/zhihu-question-mining.md`](../prompts/zhihu-question-mining.md)。
+**聊天模式提示词**见仓库根的 [`prompts/zhihu-question-mining.md`](../../prompts/zhihu-question-mining.md)。
 
 ---
 
