@@ -4,11 +4,12 @@
 
 | 技能 | 说明 |
 |---|---|
+| [cnblogs-publisher](cnblogs-publisher/) | 博客园文章检查、预览、确认后发布及核验 |
 | [motion-video-workflow](motion-video-workflow/) | 音频转动效视频，后续个人改版的源码入口 |
 | [dashi-animationstyle](dashi-animationstyle/) | 多风格讲解动画 |
 | [technical-course-private-tutor](technical-course-private-tutor/) | 技术课程私人导师 |
 | [conversation-synthesis](conversation-synthesis/) | 对话合成 |
-| [self-reflection-journal](self-reflection-journal/) | 自我思考日志：问题、想法、记录与发散 |
+| [self-reflection-journal](self-reflection-journal/) | 个人思考成文：按方向归并少量完整文章，保留本人语言 |
 | [lingbot-auto-learning-logic](lingbot-auto-learning-logic/) | 自动学习逻辑地图 |
 | [lingbot-code-changes](lingbot-code-changes/) | 受控代码改动流程 |
 

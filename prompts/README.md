@@ -6,7 +6,7 @@
 |---|---|---|---|
 | [`technical-course-private-tutor.md`](technical-course-private-tutor.md) | `technical-course-private-tutor` | **开课时**贴出，然后按「继续 / 下一节」逐节推进 | 一次一节 |
 | [`conversation-synthesis.md`](conversation-synthesis.md) | `conversation-synthesis` | **一段对话聊完之后**，在末尾贴出，让它把这段对话整理成文章 | 7 阶段 |
-| [`self-reflection-journal.md`](self-reflection-journal.md) | `self-reflection-journal` | 从个人口述和稿子整理问题、想法、记录与发散，形成日志 | 默认一次完成，按需分阶段 |
+| [`self-reflection-journal.md`](self-reflection-journal.md) | `self-reflection-journal` | 将个人口述和稿子按方向归并为少量完整文章，保留本人语言 | 默认一次完成，按需分阶段 |
 
 ## 提示词的推进方式
 
@@ -14,9 +14,9 @@
 |---|---|
 | 讲师 | 一次一节（走完路线图为止） |
 | 对话合成 | 1 骨架 → 2 初稿 → 3 论证加固 → 4 语言与风格 → 5 证据与链接 → 6 结尾 → 7 标题与成稿 |
-| 自我思考日志 | 默认一次整理；用户要求时按核对与归并 → 日志初稿 → 博客润色推进 |
+| 个人思考成文 | 默认一次整理；用户要求时按核对与归并 → 文章初稿 → 润色推进 |
 
-**闸门都设在最容易做错的那一步**：讲师是「一节讲完就停」，对话合成是「骨架确认后才写正文」，自我思考日志则按用户要求决定是否分阶段，不强制每步确认。
+**闸门都设在最容易做错的那一步**：讲师是「一节讲完就停」，对话合成是「骨架确认后才写正文」，个人思考成文则按用户要求决定是否分阶段，不强制每步确认。
 
 ## 为什么需要单独一份
 

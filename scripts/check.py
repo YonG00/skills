@@ -129,6 +129,7 @@ SYNC_RULES = {
         "转写核对", "存疑则合", "占位标签", "没说过", "第一人称",
         "问题", "想法", "记录", "发散", "未完成", "不属于发布正文",
         "不强制总结", "待确认", "整理者补充",
+        "完整正文", "2–4", "不是数量指标", "跨日期", "录音软件", "文件",
     ],
     "prompts/lingbot-code-changes.md": [
         "不扩权", "只读取证", "不写行号", "连带改动",
@@ -171,6 +172,7 @@ REQUIRED = {
     ],
     "motion-video-workflow": ["SKILL.md", "README.md", "LICENSE", "motion-kit/README.md"],
     "dashi-animationstyle": ["SKILL.md", "README.md", "LICENSE"],
+    "cnblogs-publisher": ["SKILL.md", "scripts/cnblogs.py", "scripts/publish_batch.py"],
 }
 
 
