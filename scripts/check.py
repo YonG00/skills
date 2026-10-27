@@ -117,6 +117,10 @@ def check_links(verbose: bool = True) -> list[str]:
 # 每份提示词必须出现的关键词，对应 SKILL.md 里的硬规则。
 # 提示词改了也要同步更新这里；关键词缺失 = 提示词落后于 skill。
 SYNC_RULES = {
+    "prompts/qwen3-tts-mlx.md": [
+        "主动请求许可", "公式", "表格", "音色档案", "固定增益", "断点续跑",
+        "voice.wav", "segments.json", "motion_handoff.md", "AI 合成", "未获准",
+    ],
     "prompts/technical-course-private-tutor.md": [
         "复合疑问", "拍点计数", "缺一不可", "小检查",
         "高中生", "补一个空格", "标签行",
@@ -151,6 +155,7 @@ SYNC_RULES = {
 
 # 每个 skill 目录至少要有这些文件
 REQUIRED = {
+    "qwen3-tts-mlx": ["SKILL.md", "README.md", "CHANGELOG.md", "scripts/narrate.py", "references/runtime.md"],
     "technical-course-private-tutor": [
         "SKILL.md", "README.md", "CHANGELOG.md",
         "references/section-splitting.md",

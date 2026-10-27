@@ -1,0 +1,4 @@
+local_config.json
+*.wav
+*.mp3
+*.m4a

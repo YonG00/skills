@@ -4,6 +4,7 @@
 
 | 文件 | 对应 skill | 用法 | 阶段 |
 |---|---|---|---|
+| [`qwen3-tts-mlx.md`](qwen3-tts-mlx.md) | `qwen3-tts-mlx` | 主动请求许可后整理口播、使用保存音色生成纯人声并交接 motion-video | 许可按范围确认，已明确授权不重复问 |
 | [`technical-course-private-tutor.md`](technical-course-private-tutor.md) | `technical-course-private-tutor` | **开课时**贴出，然后按「继续 / 下一节」逐节推进 | 一次一节 |
 | [`conversation-synthesis.md`](conversation-synthesis.md) | `conversation-synthesis` | **一段对话聊完之后**，在末尾贴出，让它把这段对话整理成文章 | 7 阶段 |
 | [`self-reflection-journal.md`](self-reflection-journal.md) | `self-reflection-journal` | 将个人口述和稿子按方向归并为少量完整文章，保留本人语言 | 默认一次完成，按需分阶段 |

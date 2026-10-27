@@ -14,6 +14,7 @@ Agent Skills 集合。
 
 | Skill | 说明 |
 |---|---|
+| [`qwen3-tts-mlx/`](技能库/qwen3-tts-mlx/) | 获准后整理口播稿，使用保存音色生成本地纯人声；支持长稿续跑、内容核对及 motion-video 交接。 |
 | [`technical-course-private-tutor/`](技能库/technical-course-private-tutor/) | 技术课程私人导师：把 lecture notes / PDF / 视频转录稿 / GitHub chapter 重建为可逐节学习的连续知识路径。**先把材料拆成主干路线图**（每节一个疑问句核心问题、声明"本节不做什么"），再一节一节讲；每个新概念首次出现时给 1–3 句历史锚点。 |
 | [`conversation-synthesis/`](技能库/conversation-synthesis/) | 对话合成：把长期对话整理成**真正被思考过**的文章 / 研究笔记 / 分析稿。先还原**问题链与判断变化**再决定章节（不按聊天时间顺序）；保护用户真实表达；信息资产先回收再筛选并做**守恒核对**；可核验事实必须有来源；交付前跑六项审计。 |
 | [`cnblogs-publisher/`](技能库/cnblogs-publisher/) | 博客园文章检查、预览、明确确认后发布及合集归属核验，含防重复提交的配套脚本。 |

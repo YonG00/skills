@@ -4,6 +4,7 @@
 
 | 技能 | 说明 |
 |---|---|
+| [qwen3-tts-mlx](qwen3-tts-mlx/) | 先请求许可，口播整理、保存音色、本地纯人声配音与 motion-video 交接 |
 | [cnblogs-publisher](cnblogs-publisher/) | 博客园文章检查、预览、确认后发布及核验 |
 | [motion-video-workflow](motion-video-workflow/) | 音频转动效视频，后续个人改版的源码入口 |
 | [dashi-animationstyle](dashi-animationstyle/) | 多风格讲解动画 |
