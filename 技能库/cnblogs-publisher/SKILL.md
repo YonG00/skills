@@ -67,4 +67,20 @@ python3 scripts/publish_batch.py --plan 最终发布请求.json --approved-sha25
 
 脚本先写本地 `batch_status.json`，逐篇保存远端 ID、回读核验，再批量加入合集并核验归属。任何已有状态都拒绝自动重跑；网络写入中断时先只读排查，不能删除状态后再次新建。API 创建成功但合集失败时，报告已发布的 ID，只修复关联，不重发正文。用户原稿、计划、预览、发布记录都放在资料目录，不进技能仓库。
 
+## 发布后核验与审核状态
+
+2026-10-28 发布两篇到合集「思索」时确认：`batch_status.json` 达到 `verified` 只代表创建、正文回读和合集归属成功，**不代表公开页已可访问**。其中一篇公开 URL 返回 404，另一篇正常；继续检查审核状态后发现前者为「待审核」。
+
+用 PAT 查询审核状态（`POST`，请求体按 PostId）：
+
+```bash
+curl -sS -X POST "https://i.cnblogs.com/openapi/v1/posts/reviewStatus:check" \
+  -H "Authorization: Bearer $CNBLOGS_TOKEN" -H "Authorization-Type: pat" \
+  -H "Content-Type: application/json" -d '{"PostId": 12345678}'
+```
+
+返回 `reviewStatus`：`0` = 待审核，`1` = 审核通过。待审核期间公开页 404 属正常状态，**不要重建或重发**；报告「已创建并加入合集，等待平台审核」，稍后再查。也可用 `{"Url": "..."}` 查询。
+
+公开页检查用 `curl -L` 跟随跳转；`/p/{id}.html` 会 301 到 `/articles/{id}`。合集名称可能被用户改名，发布前必须重新 `GET /api/collections` 取当前标题，不能沿用旧发布记录里的名称。
+
 源码放入技能库不代表已安装到运行时技能目录；未同步不得声称已全局生效。

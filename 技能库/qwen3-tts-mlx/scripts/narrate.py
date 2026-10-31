@@ -199,11 +199,34 @@ def generate(plan_path, approved, resume=False, stop_after=None):
             accepted = False
             for attempt in range(3):
                 mx.random.seed(131 + index * 13 + attempt * 101)
-                pieces = [np.array(result.audio) for result in model.generate(
-                    text=segment['text'], ref_audio=mx.array(ref), ref_text=ref_text, lang_code='chinese',
-                    temperature=profile.get('temperature', .65), top_p=profile.get('top_p', .9),
-                    repetition_penalty=profile.get('repetition_penalty', 1.15), max_tokens=1400, verbose=False)]
-                audio = np.concatenate(pieces)
+                # Check short utterances independently so omissions cannot hide in a long score.
+                pieces = []
+                for phrase_index, phrase in enumerate(split_text(segment['text'], 100)):
+                    phrase_ok = False
+                    for trial_index in range(6):
+                        mx.random.seed(131 + index * 101 + phrase_index * 37 + trial_index * 503 + attempt * 701)
+                        generated = [np.array(result.audio) for result in model.generate(
+                            text=phrase.strip(), ref_audio=mx.array(ref), ref_text=ref_text, lang_code='chinese',
+                            temperature=profile.get('temperature', .65), top_p=profile.get('top_p', .9),
+                            repetition_penalty=profile.get('repetition_penalty', 1.15), max_tokens=650, verbose=False)]
+                        utterance = np.concatenate(generated)
+                        probe = files / f'{index:03d}_phrase.wav'
+                        sf.write(probe, utterance, 24000, subtype='PCM_24')
+                        heard = transcribe(probe)['text']
+                        phrase_score, phrase_tail = metrics(phrase, heard)
+                        print(json.dumps({'segment': index, 'phrase': phrase_index + 1,
+                            'try': trial_index + 1, 'similarity': round(phrase_score, 3), 'tail': phrase_tail}), flush=True)
+                        save(files / f'{index:03d}_phrase_{phrase_index + 1:02d}_check.json',
+                            {'expected': phrase, 'text': heard, 'similarity': phrase_score, 'tail_present': phrase_tail})
+                        if phrase_score >= .84 and phrase_tail:
+                            phrase_ok = True
+                            break
+                        mx.clear_cache()
+                    if not phrase_ok:
+                        raise ValueError(f'Segment {index}, phrase {phrase_index + 1} failed verification')
+                    pieces.extend([utterance, np.zeros(2400, dtype=np.float32)])
+                    mx.clear_cache()
+                audio = np.concatenate(pieces[:-1])
                 if not np.isfinite(audio).all() or not .5 < len(audio) / 24000 < 115:
                     continue
                 sf.write(files / f'{index:03d}_raw.wav', audio, 24000, subtype='PCM_24')
@@ -234,7 +257,7 @@ def generate(plan_path, approved, resume=False, stop_after=None):
                         accumulated += norm(word['word'])
                 score, tail_ok = metrics(segment['text'], actual)
                 save(files / f'{index:03d}_check.json', {'attempt': attempt + 1, 'text': actual, 'similarity': score, 'tail_present': tail_ok})
-                if score >= .65 and tail_ok:
+                if score >= .84 and tail_ok:
                     accepted = True
                     break
                 print(json.dumps({'segment': index, 'retry': attempt + 1, 'similarity': round(score, 3), 'tail_present': tail_ok}), flush=True)
@@ -256,6 +279,8 @@ def generate(plan_path, approved, resume=False, stop_after=None):
             fade = min(240, len(clean)//10)
             clean[:fade] *= np.linspace(0, 1, fade); clean[-fade:] *= np.linspace(1, 0, fade)
             sf.write(wav, clean, 24000, subtype='PCM_24')
+            subprocess.run(['ffmpeg', '-y', '-hide_banner', '-loglevel', 'error', '-i', str(wav),
+                '-c:a', 'libmp3lame', '-q:a', '2', '-metadata', 'artist=AI合成', str(wav.with_suffix('.mp3'))], check=True)
             state['segments'][key] = {'state': 'verified', 'audio_sha256': sha(wav.read_bytes()),
                 'duration': len(clean)/24000, 'similarity': score, 'gain': gain, 'attempts': attempt + 1}
             state['elapsed_this_run'] = round(time.time() - started, 1)
